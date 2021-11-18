@@ -1,5 +1,5 @@
 {
-  "name": "node-backend",
+  "name": "gcp-cloud-storage-node",
   "version": "1.0.0",
   "description": "Node Backend",
   "main": "dist/index.js",
