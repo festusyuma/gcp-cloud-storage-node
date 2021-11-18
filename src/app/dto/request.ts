@@ -16,4 +16,5 @@ export interface ReqParams<T = any> {
   pagination: Pagination,
   filters: {[key: string]: any},
   reference: string,
+  file: []
 }

@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
-import response from "../util/response";
+import {build} from "./index";
+import {UploadService} from "../service";
+import {response} from "../util";
 
-const index = (req: Request, res: Response) => {
-  const { status, success, message, data } = response.success('Welcome')
-  return res.status(status).send({ success, message, data })
-}
+const index = (req: Request, res: Response) => build(res, UploadService.uploadFile, {
+  file: req.file
+})
 
 const health = (req: Request, res: Response) => {
   const { status, success, message, data } = response.success('Connected')
