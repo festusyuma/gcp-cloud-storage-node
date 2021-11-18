@@ -5,7 +5,7 @@ export interface CustomRequest {
 
 export interface Pagination {
   page: number
-  perPage: number,
+  size: number,
   totalPages?: number,
 }
 
@@ -16,5 +16,5 @@ export interface ReqParams<T = any> {
   pagination: Pagination,
   filters: {[key: string]: any},
   reference: string,
-  file: []
+  file: Express.Multer.File
 }

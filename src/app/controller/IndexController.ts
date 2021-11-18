@@ -4,7 +4,8 @@ import {UploadService} from "../service";
 import {response} from "../util";
 
 const index = (req: Request, res: Response) => build(res, UploadService.uploadFile, {
-  file: req.file
+  file: req.file,
+  filters: req.query
 })
 
 const health = (req: Request, res: Response) => {

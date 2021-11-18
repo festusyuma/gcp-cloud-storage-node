@@ -15,12 +15,26 @@ const validPhoneNumber = (phoneNumber: string): boolean => {
 
 const getPagination = (req: Request): Pagination => {
   const page: unknown = req.query.page
-  const perPage: unknown = req.query.perPage
+  const size: unknown = req.query.size
 
   return {
     page: page ? Number(page) : 0,
-    perPage: perPage ? Number(perPage) as number : 20,
+    size: size ? Number(size) as number : 20,
   }
 }
 
-export { rand, validEmail, validPhoneNumber, getPagination }
+const fileTypes: {[key: string]: string[]} = {
+  image: ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'],
+  video: ['video/mp4', 'video/ogg', 'video/webm'],
+  audio: ['audio/mpeg', 'audio/ogg', 'audio/wav'],
+  document: [
+    'application/msword',
+    'application/vnd.ms-excel',
+    'application/vnd.ms-powerpoint',
+    'text/plain',
+    'application/pdf',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+  ],
+}
+
+export { rand, validEmail, validPhoneNumber, getPagination, fileTypes }
