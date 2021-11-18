@@ -28,7 +28,6 @@ const uploadToGoogleCloud = async (type: string = 'image', file: Express.Multer.
     const blobStream = blob.createWriteStream();
 
     blobStream.on('error', err => {
-      console.error(err)
       reject(err)
     })
 
